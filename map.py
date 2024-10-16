@@ -1,7 +1,6 @@
 exit()
 import requests
 import time
-API_KEY = '!!!AIzaSyDUiX74V76OU5eM6avOjndm9k526G5HxR8'
 #location = '43.0618,141.3545'  # 札幌の緯度経度
 #location = '35.6938,139.7034'  # 新宿の緯度経度
 
