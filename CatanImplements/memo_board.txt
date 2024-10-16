@@ -1,0 +1,85 @@
+メモ！
+
+boardが持ってるやつ
+
+⚫hexTileDict　辞書
+キー
+六角形のint(0~18) 3,4,5,4,3の19個.
+真ん中→小6角形を上から時計周り、大6角形を上から時計周り
+バリュー
+hexTileのオブジェクト
+
+⚫︎vertex_index_to_pixel_dict　辞書
+キー
+頂点のint(0~53) 写真参照
+バリュー
+Point(座表)のnamedtuple
+
+⚫︎boardGraph　辞書
+キー
+Point(座表)のnamedtuple
+バリュー
+Vertexのオブジェクト
+
+
+
+【hexTileオブジェクトについて】
+
+hex: Hex(q=0, r=0, s=0) (<class 'hexLib.Hex'>),
+namedタプル、q,r,sでどこの六角形かか表現している
+
+resource: Resource(type='WOOD', num=9) (<class 'hexTile.Resource'>),
+namedタプル、リソースタイプとサイコロ数がわかる
+
+coord: Axial_Point(q=0, r=0) (Axial_Point),
+namedタプル, q,rでどこの六角形か表現している
+
+pixelCenter: Point(x=500.0, y=400.0) (<class 'hexLib.Point'>),
+表示用
+
+index: 0 (<class 'int'>),
+
+robber: False (<class 'bool'>),
+
+neighborList: None (<class 'NoneType'>)
+使われてない！注意
+
+
+
+【Vertexオブジェクトについて】
+
+vertexIndex
+はい
+
+pixelCoordinates: Point(x=580.0, y=400.0) (<class 'hexLib.Point'>),
+Point型　表示用
+
+edgeList: [Point(x=540.0, y=330.72), Point(x=540.0, y=469.28), Point(x=660.0, y=400.0)] (<class 'list'>),
+つながる頂点のPointのリスト
+
+adjacentHexList: [0, 2, 3] (<class 'list'>),
+つながる六角形のindexのリスト
+
+edgeState: [[None, False], [None, False], [<heuristicAIPlayer.heuristicAIPlayer object at 0x7f85f8bd96d0>, True]] (<class 'list'>),
+つながる頂点との間の辺の情報。所有者がいたら、[playerオブジェクト、True]。なければ[None,False]
+
+state: {'Player': None, 'Settlement': False, 'City': False} (<class 'dict'>),
+この頂点の情報の辞書。Player(プレイヤーオブジェクトorNone),開拓地と都市はbool
+
+port: 2:1 SHEEP (<class 'str'>),
+港について。港なら”3:1 PORT”か"2:1 SHEEP"。違うならFalse(bool)
+
+isColonised: False (<class 'bool'>)
+何か建設されてるか bool
+
+
+CNN
+平均報酬 0.3661999999999999 win 69 lose 31 hande 7
+平均報酬 0.07259999999999986 win 49 lose 51 hande 6
+平均報酬 -0.12360000000000014 win 34 lose 66 hande 5
+(ランダム) 平均報酬 1.425599999999986 win 88 lose 12 hande 0
+グラフ
+平均報酬 -0.020399999999999988 win 46 lose 54 hande 7
+平均報酬 -0.3291999999999996 win 26 lose 74 hande 6
+平均報酬 -0.5323999999999998 win 12 lose 88 hande 5
+（ランダム）平均報酬 0.4544000000000033 win 46 lose 54 hande 0
