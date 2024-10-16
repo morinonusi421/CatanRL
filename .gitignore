@@ -1,0 +1,4 @@
+*.cnn_eval
+*.graph_eval
+*.results
+*.graph_eval_taihi
